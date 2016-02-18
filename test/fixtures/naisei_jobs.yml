@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  naisei_id: 1
+  level_up: 1
+  start_time: 2016-02-18 23:07:46
+  time: 1
+  end_flag: 1
+
+two:
+  user_id: 1
+  naisei_id: 1
+  level_up: 1
+  start_time: 2016-02-18 23:07:46
+  time: 1
+  end_flag: 1
