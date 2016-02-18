@@ -1,31 +1,33 @@
 - Operation
 
-rails new game
+$ rails new game
 
-cd game
+$ cd game
 
-rails generate model NaiseiMaster naisei_id:integer naisei_name:string
-rails generate model NaiseiKaikonMaster level:integer cost:integer time:integer
-rails generate model NaiseiChisuiMaster level:integer cost:integer time:integer
-rails generate model UserMaster user_id:integer user_name:string money:integer kaikon_lv:integer chisui_lv:integer
-rails generate model NaiseiJob user_id:integer naisei_id:integer level_up:integer start_time:datetime time:integer end_flag:integer
+$ rails generate model NaiseiMaster naisei_id:integer naisei_name:string
 
-rake db:migrate
+$ rails generate model NaiseiKaikonMaster level:integer cost:integer time:integer
 
-vi db/seeds.rb
+$ rails generate model NaiseiChisuiMaster level:integer cost:integer time:integer
 
---
-NaiseiMaster.create(:naisei_id => 1, :naisei_name => "kaikon")
-NaiseiMaster.create(:naisei_id => 2, :naisei_name => "chisui")
-NaiseiKaikonMaster.create(:level => 1, :cost => 100, :time => 60)
-NaiseiKaikonMaster.create(:level => 2, :cost => 200, :time => 120)
-NaiseiKaikonMaster.create(:level => 3, :cost => 300, :time => 180)
-NaiseiChisuiMaster.create(:level => 1, :cost => 150, :time => 90)
-NaiseiChisuiMaster.create(:level => 2, :cost => 250, :time => 150)
-NaiseiChisuiMaster.create(:level => 3, :cost => 350, :time => 210)
-UserMaster.create(:user_id => 1, :user_name => "yahata", :money => 5000, :kaikon_lv => 0, :chisui_lv => 0)
---
+$ rails generate model UserMaster user_id:integer user_name:string money:integer kaikon_lv:integer chisui_lv:integer
 
-rake db:seed
+$ rails generate model NaiseiJob user_id:integer naisei_id:integer level_up:integer start_time:datetime time:integer end_flag:integer
+
+$ rake db:migrate
+
+$ vi db/seeds.rb
+
+    NaiseiMaster.create(:naisei_id => 1, :naisei_name => "kaikon")
+    NaiseiMaster.create(:naisei_id => 2, :naisei_name => "chisui")
+    NaiseiKaikonMaster.create(:level => 1, :cost => 100, :time => 60)
+    NaiseiKaikonMaster.create(:level => 2, :cost => 200, :time => 120)
+    NaiseiKaikonMaster.create(:level => 3, :cost => 300, :time => 180)
+    NaiseiChisuiMaster.create(:level => 1, :cost => 150, :time => 90)
+    NaiseiChisuiMaster.create(:level => 2, :cost => 250, :time => 150)
+    NaiseiChisuiMaster.create(:level => 3, :cost => 350, :time => 210)
+    UserMaster.create(:user_id => 1, :user_name => "yahata", :money => 5000, :kaikon_lv => 0, :chisui_lv => 0)
+
+$ rake db:seed
 
 
