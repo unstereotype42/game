@@ -1,28 +1,31 @@
-== README
+- Operation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+rails new game
 
-Things you may want to cover:
+cd game
 
-* Ruby version
+rails generate model NaiseiMaster naisei_id:integer naisei_name:string
+rails generate model NaiseiKaikonMaster level:integer cost:integer time:integer
+rails generate model NaiseiChisuiMaster level:integer cost:integer time:integer
+rails generate model UserMaster user_id:integer user_name:string money:integer kaikon_lv:integer chisui_lv:integer
+rails generate model NaiseiJob user_id:integer naisei_id:integer level_up:integer start_time:datetime time:integer end_flag:integer
 
-* System dependencies
+rake db:migrate
 
-* Configuration
+vi db/seeds.rb
 
-* Database creation
+--
+NaiseiMaster.create(:naisei_id => 1, :naisei_name => "kaikon")
+NaiseiMaster.create(:naisei_id => 2, :naisei_name => "chisui")
+NaiseiKaikonMaster.create(:level => 1, :cost => 100, :time => 60)
+NaiseiKaikonMaster.create(:level => 2, :cost => 200, :time => 120)
+NaiseiKaikonMaster.create(:level => 3, :cost => 300, :time => 180)
+NaiseiChisuiMaster.create(:level => 1, :cost => 150, :time => 90)
+NaiseiChisuiMaster.create(:level => 2, :cost => 250, :time => 150)
+NaiseiChisuiMaster.create(:level => 3, :cost => 350, :time => 210)
+UserMaster.create(:user_id => 1, :user_name => "yahata", :money => 5000, :kaikon_lv => 0, :chisui_lv => 0)
+--
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+rake db:seed
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
