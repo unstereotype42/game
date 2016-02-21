@@ -12,10 +12,12 @@
 <p>
   <ul>
     <% if @naisei_job.end_flag == 1 then %>
-    <li><%= link_to "開墾を実行" , controller:"home" , action:"kaikon" , player_id:@player.user_id%></li>
-    <li><%= link_to "治水を実行" , controller:"home" , action:"chisui" , player_id:@player.user_id%></li>
-    <% elsif @naisei_job.end_flag == 0 then %>
-    <li><%= @run_naisei_name %>を実行中【残り時間：<%= @run_naisei_remain_time.to_i %>秒】</li>
+      <li><%= link_to "開墾を実行" , controller:"home" , action:"kaikon" , player_id:@player.user_id%></li>
+      <li><%= link_to "治水を実行" , controller:"home" , action:"chisui" , player_id:@player.user_id%></li>
+    <% elsif @naisei_job.end_flag == 0 && @complete_flag == 1 then %>
+      <li><%= @run_naisei_name %>を実行中【残り時間：<%= @run_naisei_remain_time.to_i %>秒】</li>
+    <% elsif @naisei_job.end_flag == 0 && @complete_flag == 0 then %>
+      <li><%= @run_naisei_name %>が完了しました！　<%= link_to 'レベルアップ' , controller:"home" , action:"levelup" , player_id:@player.user_id , naisei_id:@naisei_job.naisei_id , level_up:@naisei_job.level_up %></li>
     <% end %>
   </ul>
 </p>
