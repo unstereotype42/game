@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'home/top'
+  get 'home/kaikon' => 'home#kaikon'
+  get 'home/chisui' => 'home#chisui'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

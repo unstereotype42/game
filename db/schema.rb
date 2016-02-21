@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218143230) do
+ActiveRecord::Schema.define(version: 20160221073822) do
 
   create_table "naisei_chisui_masters", force: :cascade do |t|
     t.integer  "level"
@@ -43,8 +43,9 @@ ActiveRecord::Schema.define(version: 20160218143230) do
   create_table "naisei_masters", force: :cascade do |t|
     t.integer  "naisei_id"
     t.string   "naisei_name"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "naisei_name_j"
   end
 
   create_table "user_masters", force: :cascade do |t|

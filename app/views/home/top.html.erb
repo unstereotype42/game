@@ -1,14 +1,21 @@
-<h1>TOP</h1>
-<h2>Player Info</h2>
+<h1>戦国AGE</h1>
+<h2>城主情報</h2>
 <p>
   <ul>
-    <li>Name : <%= @player.user_name %></li>
-    <li>Money : <%= @player.money %></li>
-    <li>Kaikon LV : <%= @player.kaikon_lv %></li>
-    <li>Chisui LV : <%= @player.chisui_lv %></li>
+    <li>名前　　　　: <%= @player.user_name %></li>
+    <li>金　　　　　: <%= @player.money %></li>
+    <li>開墾レベル　: <%= @player.kaikon_lv %></li>
+    <li>治水レベル　: <%= @player.chisui_lv %></li>
   </ul>
 </p>
-<h3>Naisei</h3>
+<h3>内政</h3>
 <p>
-  
+  <ul>
+    <% if @naisei_job.end_flag == 1 then %>
+    <li><%= link_to "開墾を実行" , controller:"home" , action:"kaikon" , player_id:@player.user_id%></li>
+    <li><%= link_to "治水を実行" , controller:"home" , action:"chisui" , player_id:@player.user_id%></li>
+    <% elsif @naisei_job.end_flag == 0 then %>
+    <li><%= @run_naisei_name %>を実行中【残り時間：<%= @run_naisei_remain_time.to_i %>秒】</li>
+    <% end %>
+  </ul>
 </p>
