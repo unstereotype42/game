@@ -1,5 +1,17 @@
 - Operation
 
+$ git clone https://xxxx
+
+$ cd game
+
+$ bundle install 
+
+$ rake db:migrate
+
+$ rake db:seed
+
+----
+
 $ rails new game
 
 $ cd game
